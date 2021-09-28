@@ -74,10 +74,21 @@ h3 {
   font-size: clamp(1.75rem, 4vw, 3.5rem);
   line-height: 1;
 }
+@media screen and (max-height: 600px) {
+  * {
+    line-height: 0.75;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+}
 a:hover {
   text-decoration: underline 0.5rem double;
 }
 
+#sponsor img {
+  width: clamp(5rem, 10vw, 200px);
+}
 #sponsor {
-  width: clamp(8rem, 10vw, 200px);
+  font-size: clamp(0.5rem, 4vw, 1rem);
 }
