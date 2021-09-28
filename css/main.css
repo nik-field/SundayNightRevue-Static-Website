@@ -77,3 +77,7 @@ h3 {
 a:hover {
   text-decoration: underline 0.5rem double;
 }
+
+#sponsor {
+  width: clamp(8rem, 10vw, 200px);
+}
