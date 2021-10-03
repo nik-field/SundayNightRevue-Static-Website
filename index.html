@@ -11,32 +11,62 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body class="bg-yellow-400 relative py-4">
-    <header class="relative flex justify-center">
-      <h1 class="uppercase flex flex-wrap text-center justify-center">
+  <body class="bg-yellow-400 relative">
+    <header class="relative md:min-h-screen flex flex-col justify-start overflow-hidden pt-4">
+      <h1 class="uppercase mx-auto flex flex-wrap text-center justify-center">
         <span class="w-full text-left the">The</span>
         Sunday Night
         <span class="w-full">Revue</span>
       </h1>
-    </header>
-    <main class="z-20 relative h-full flex justify-center flex-wrap">
-      <h3 class="font-secondary w-full text-center p-4">Old Time Vibes * Lush Harmonies * Craft Beer & Comfort Food * PWYC</h3>
-      <h1 class="font-secondary flex flex-wrap text-center justify-between">
-        <a href="https://irenespub.ca">Irene's Pub</a>
-        <span class="w-full text-right address pb-4">885 Bank St.</span>
-        <span class="schedule text-left font-primary">Each & Every Sunday</span>
-        <span class="time text-right font-primary">8:30pm</span>
-      </h1>
-    </main>
-    <footer class="fixed w-full bottom-0">
-      <div class="md:absolute -right-2 -bottom-2 lg:max-w-[70vw]" id="table-image">
+      <div class="z-20 relative flex justify-center flex-wrap">
+        <h3 class="font-secondary w-full text-center p-4">Old Time Vibes * Lush Harmonies * Craft Beer & Comfort Food * PWYC</h3>
+        <h1 class="font-secondary flex flex-wrap text-center justify-between">
+          <a href="https://irenespub.ca">Irene's Pub</a>
+          <span class="w-full text-right address pb-4">885 Bank St.</span>
+          <span class="schedule text-left font-primary">Each & Every Sunday</span>
+          <span class="time text-right font-primary">8:30pm</span>
+        </h1>
+      </div>
+      <div class="md:absolute -right-2 -bottom-2 lg:max-w-[70vw]" id="table-overlay">
         <img class="object-contain object-right md:max-h-[36vh]" src="images/table.png" width="1024" height="auto" alt="" />
       </div>
       <div id="sponsor" class="m-4 absolute left-0 bottom-0 text-center -rotate-12">
         <h4>Proudly sponsored by:</h4>
         <a class="cursor-pointer flex justify-center" href="https://whitewaterbeer.ca/"><img src="images/logo_whitewater.png" width="200" height="auto" alt="" /></a>
       </div>
-      <div id="footer-content" class="hidden h-20 bg-gray-700 uppercase flex items-center px-4">IrenesPub.com</div>
+    </header>
+    <main class="bg-gray-900 p-12 relative">
+      <section id="tipjar" class="z-20 relative h-full flex justify-center flex-wrap">
+        <h3 class="text-white text-center w-full">LEAVE A TIP!</h3>
+        <div class="text-white flex items-center justify-center p-8 md:p-12">
+          <img src="images/tip_jar.svg" width="230" height="auto" alt="A doodle of a jar of money" />
+        </div>
+        <div class="flex items-center">
+          <ul class="list-none md:p-12">
+            <li>
+              <button id="copy" data-tippy-content="Email Copied!" data-clipboard-text="tipjar@sundaynightrevue.ca">
+                <span class="text-sm leading-3 text-gray-500 w-full">Send an E-Transfer</span>tipjar@sundaynightrevue.ca
+              </button>
+            </li>
+            <li><a href="https://buy.stripe.com/28o17i1mt1Vdebu6op">$5 Tip</a></li>
+            <li><a href="https://buy.stripe.com/00g2bm6GN8jB3wQ6oo">$3 Tip</a></li>
+            <li><a href="https://www.paypal.com/donate?hosted_button_id=HAGDXRRUD8KXS">PayPal</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer class="hidden w-full bottom-0">
+      <div id="footer-content" class="h-20 bg-gray-700 uppercase flex items-center px-4">IrenesPub.com</div>
     </footer>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script>
+      const clipboard = new ClipboardJS("#copy");
+      const tooltip = tippy(document.querySelector("#copy"), { trigger: "click" });
+      clipboard.on("success", (e) => {
+        tooltip.show();
+      });
+    </script>
   </body>
 </html>

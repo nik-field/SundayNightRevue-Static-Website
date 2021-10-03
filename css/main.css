@@ -24,6 +24,9 @@ body {
   position: relative;
 }
 
+main {
+}
+
 h1,
 h2,
 h3,
@@ -82,7 +85,7 @@ h3 {
     font-size: 1.5rem;
   }
 }
-a:hover {
+header a:hover {
   text-decoration: underline 0.5rem double;
 }
 
@@ -91,4 +94,16 @@ a:hover {
 }
 #sponsor {
   font-size: clamp(0.5rem, 4vw, 1rem);
+}
+
+li {
+}
+
+li > * {
+  @apply bg-yellow-400 py-2 uppercase flex justify-center items-center px-8 text-center text-xl flex-wrap text-black my-6;
+  min-height: 56px;
+  max-width: 320px;
+  width: 100%;
+  border-radius: 22px;
+  box-shadow: 6px 6px 11px #242424;
 }
