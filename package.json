@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.8",
+    "postcss-import": "^14.0.2",
     "tailwindcss": "^2.2.16"
   },
-  "devDependencies": {},
   "browserslist": "last 30 versions",
   "scripts": {
     "start": "npx tailwindcss -i css/main.css -o css/style.css --watch",

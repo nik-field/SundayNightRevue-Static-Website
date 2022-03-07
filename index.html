@@ -10,8 +10,14 @@
   <body class="relative flex flex-col items-center h-full">
     <div id="container" class="w-full relative flex flex-col items-center px-10 flex-shrink-0">
       <div class="absolute w-full h-full p-2 pointer-events-none">
-        <div id="border" class="pointer-events-none"></div>
-        <div id="stickers" class="sticky mt-[-100vh] top-0 left-0 p-8 lg:p-12 flex items-center pointer-events-auto">
+        <div id="lamp1" class="absolute mix-blend-multiply right-12 md:right-24 w-16 sm:w-24 sm:-top-16 -top-12 md:w-32 md:-top-32 xl:w-48 xl:-top-24 animate__animated animate__swing animate__slow">
+          <img class="animate__animated animate__bounceInDown" src="images/light.png" alt="" />
+        </div>
+        <div id="lamp2" class="hidden xl:block absolute mix-blend-multiply left-24 top-0 animate__animated animate__swing animate__slow animate__delay-2s">
+          <img class="animate__animated animate__bounceInDown animate__delay-2s" src="images/light.png" alt="" />
+        </div>
+        <div id="border" class="pointer-events-none z-10"></div>
+        <div id="icon-stickers" class="sticky mt-[-100vh] top-0 left-0 p-8 lg:p-12 flex items-center pointer-events-auto">
           <div id="instagram-icon" class="w-8 hover:scale-110 mr-4">
             <a href="https://instagram.com/sunday.night.revue">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -27,7 +33,7 @@
         </div>
       </div>
 
-      <hero class="max-w-3xl flex items-center flex-col mt-24 flex-shrink-0">
+      <hero class="max-w-3xl flex items-center flex-col mt-24 flex-shrink-0 animate__bounceIn">
         <div id="wordmark" class="max-w-3xl"><img width="1022" height="auto" src="images/build/colour-wordmark.png" alt="The Sunday Night Revue" /></div>
         <div id="irenes" class="max-w-xl mx-4 my-8">
           <a href="https://irenespub.ca"><img width="713" height="auto" class="hover:scale-105 transition-transform" src="images/build/irenes-marker.png" alt="Irene's Pub, 885 Bank Street" /></a>
@@ -35,9 +41,9 @@
         <div id="details" class="max-w-3xl mb-12"><img width="618" height="auto" src="images/build/details-no-web.png" alt="Every Sunday, 8:30PM, Pay What You Can" /></div>
       </hero>
       <main>
-        <div id="featuring" class="mb-24">
-          <img height="auto" width="829" class="hidden lg:block" src="images/build/featuring.png" alt="Featuring Birdie Whyte, C.A. Jackson, Sonny Aiken, Marc Albert, and Sal" />
-          <div id="mobile-featuring" class="lg:hidden flex flex-wrap justify-center">
+        <div id="featuring" class="mb-24 animate__animated animate__fadeInUp">
+          <img height="auto" width="829" class="hidden md:block" src="images/build/featuring.png" alt="Featuring Birdie Whyte, C.A. Jackson, Sonny Aiken, Marc Albert, and Sal" />
+          <div id="mobile-featuring" class="md:hidden flex flex-wrap justify-center">
             <div class="w-full flex justify-center"><img width="386" height="auto" src="images/build/featuring-header.png" alt="Featuring" /></div>
             <img width="229" height="auto" src="images/build/birdie-whyte.png" alt="Birdie Whyte" />
             <img width="229" height="auto" src="images/build/ca-jackson.png" alt="C.A. Jackson" />
@@ -47,6 +53,16 @@
           </div>
         </div>
       </main>
+      <div id="sponsor-sticker" class="absolute z-0 bottom-0 w-28 sm:w-32 m-8 left-0 hover:scale-105">
+        <a href="https://whitewaterbrewing.ca">
+          <img width="204" height="215" src="images/sponsor-sticker.png" alt="" />
+        </a>
+      </div>
+      <div id="logo-sticker" class="absolute z-0 bottom-0 w-28 sm:w-32 m-8 right-0 hover:scale-105">
+        <a href="https://whitewaterbrewing.ca">
+          <img width="204" height="215" src="images/logo-sticker.png" alt="" />
+        </a>
+      </div>
     </div>
 
     <footer class="bg-green-800 p-24 pb-0 w-full">

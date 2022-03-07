@@ -1,6 +1,12 @@
+@import "../node_modules/animate.css/animate.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --animate-delay: 0.1s;
+}
 
 html {
   height: 100%;
@@ -21,6 +27,7 @@ body {
   top: 0.5rem;
   min-height: calc(100vh - 1rem);
   border-image: url("../images/build/border2.png") 9 / 15px round;
+  -webkit-border-image: url("../images/build/border2.png") 9 / 15px round;
   outline: 0.5rem solid white;
 }
 
