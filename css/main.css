@@ -18,11 +18,17 @@ body {
 #border {
   pointer-events: none;
   position: sticky;
-  top: 0.5rem;
-  min-height: calc(100vh - 1rem);
-  border-image: url("../images/build/border2.png") 9 / 15px round;
-  -webkit-border-image: url("../images/build/border2.png") 9 / 15px round;
-  outline: 0.5rem solid white;
+  top: 0.25rem;
+  min-height: calc(100vh - 0.5rem);
+  border-image: url("../images/build/border2.png") 9 / 9px round;
+  -webkit-border-image: url("../images/build/border2.png") 9 / 9px round;
+  outline: 0.25rem solid white;
+}
+@screen sm {
+  #border {
+    border-image-width: 15px;
+    outline-width: 0.5rem;
+  }
 }
 
 #mobile-featuring > img {
