@@ -9,7 +9,7 @@ html {
 body {
   color: white;
   position: relative;
-  background: fixed url("../images/watercolour-wash.jpg"), repeat url("../images/seamless-watercolour-paper.jpg");
+  background: fixed url("../images/build/watercolour-wash.jpg"), repeat url("../images/build/seamless-watercolour-paper.jpg");
   background-size: cover, 10%;
   background-blend-mode: multiply;
   height: 100%;
@@ -20,7 +20,7 @@ body {
   position: sticky;
   top: 0.5rem;
   min-height: calc(100vh - 1rem);
-  border-image: url("../images/border2.png") 9 / 15px round;
+  border-image: url("../images/build/border2.png") 9 / 15px round;
   outline: 0.5rem solid white;
 }
 
