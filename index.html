@@ -58,6 +58,7 @@
             "postalCode" : "K1S 3W4"
           }
         },
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "eventStatus": "https://schema.org/EventScheduled",
         "performers": [{
             "@type": "Person",
@@ -75,7 +76,12 @@
             "@type": "Person",
             "name": "Sal"
           }
-        ]
+        ],
+        "offers" : {
+          "@type" : "Offer",
+          "name" : "Pay What You Can",
+          "price" : "No Cover"
+        }
       }`;
 
       const script = document.createElement("script");
