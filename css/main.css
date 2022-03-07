@@ -2,93 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Gramophone";
-  src: url("fonts/Gramophone-NF.ttf.woff") format("woff"), url("fonts/Gramophone-NF.ttf.svg#Gramophone-NF") format("svg"), url("fonts/Gramophone-NF.ttf.eot"),
-    url("fonts/Gramophone-NF.eot?#iefix") format("embedded-opentype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Phosphate Cond Inline";
-  src: url("fonts/phosphate_pro_cond_inline_regular-webfont.eot");
-  src: url("fonts/phosphate_pro_cond_inline_regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/phosphate_pro_cond_inline_regular-webfont.woff2") format("woff2"),
-    url("fonts/phosphate_pro_cond_inline_regular-webfont.woff") format("woff"), url("fonts/phosphate_pro_cond_inline_regular-webfont.svg#phosphateprocondinliundefined") format("svg");
-  font-weight: normal;
-  font-style: normal;
+html {
+  height: 100%;
 }
 
 body {
-  font-family: "Slabo 27px", serif;
   color: white;
   position: relative;
+  background: fixed url("../images/watercolour-wash.jpg"), repeat url("../images/seamless-watercolour-paper.jpg");
+  background-size: cover, 10%;
+  background-blend-mode: multiply;
+  height: 100%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.font-primary {
-  color: black;
-  font-family: "Gramophone";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-h1 {
-  @apply text-4xl;
-}
-.font-secondary {
-  font-family: "Phosphate Cond Inline";
+#border {
+  pointer-events: none;
+  position: sticky;
+  top: 0.5rem;
+  min-height: calc(100vh - 1rem);
+  border-image: url("../images/border2.png") 9 / 15px round;
+  outline: 0.5rem solid white;
 }
 
-h1 {
-  font-size: clamp(2.5rem, 12vw, 10rem);
-  width: min-content;
-  white-space: nowrap;
-  line-height: 1.25;
-}
-h1 .the {
-  font-size: clamp(1.75rem, 3vw, 4rem);
-  padding-left: clamp(3.25rem, 9vw, 12rem);
-}
-h1 span {
-  display: inline-block;
-}
-h1.font-secondary {
-  font-size: clamp(3.5rem, 19vw, 9rem);
-  line-height: 1;
-}
-h1 .address {
-  font-size: clamp(1.75rem, 7vw, 4rem);
+#mobile-featuring > img {
+  @apply mb-8 px-8;
 }
 
-.schedule,
-.time {
-  font-size: clamp(1.2rem, 6vw, 3rem);
-  line-height: 2;
-}
-h3 {
-  @apply py-2;
-  font-size: clamp(1.75rem, 4vw, 3.5rem);
-  line-height: 1;
-}
-@media screen and (max-height: 600px) {
-  * {
-    line-height: 0.75;
-  }
-  h3 {
-    font-size: 1.5rem;
-  }
-}
-a:hover {
-  text-decoration: underline 0.5rem double;
+#tipjar li > * {
+  @apply py-2 uppercase flex justify-center items-center px-8 text-center flex-wrap my-6 border-white border-2 hover:scale-105;
+  min-height: 56px;
+  max-width: 320px;
+  width: 100%;
+  border-radius: 22px;
+  box-shadow: 6px 6px 11px #242424;
 }
 
-#sponsor img {
-  width: clamp(5rem, 10vw, 200px);
-}
-#sponsor {
-  font-size: clamp(0.5rem, 4vw, 1rem);
+a {
+  @apply underline;
 }

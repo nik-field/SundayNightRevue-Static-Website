@@ -9,6 +9,10 @@ module.exports = {
       colors: {
         gray: colors.trueGray,
       },
+      screens: {
+        portrait: { raw: "(orientation: portrait)" },
+        landscape: { raw: "(orientation: landscape)" },
+      },
     },
   },
   variants: {
