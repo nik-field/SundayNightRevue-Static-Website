@@ -26,6 +26,7 @@ body {
 }
 @screen sm {
   #border {
+    top: 0.5rem;
     border-image-width: 15px;
     outline-width: 0.5rem;
     min-height: calc(100vh - 1rem);
