@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "autoprefixer": "^10.3.6",
-    "postcss": "^8.3.8",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.8",
     "tailwindcss": "^2.2.16"
   },
   "devDependencies": {},
+  "browserslist": "last 30 versions",
   "scripts": {
     "start": "npx tailwindcss -i css/main.css -o css/style.css --watch",
     "build": "NODE_ENV=production npx tailwindcss -i css/main.css -o css/style.css --minify"
