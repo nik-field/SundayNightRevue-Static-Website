@@ -46,11 +46,35 @@
         "image": "https://sundaynightrevue.ca/images/banner.png",
         "startDate": "${nextDate(0)}T20:30",
         "endDate": "${nextDate(0)}T23:30",
+        "location" : {
+          "@type" : "Place",
+          "name" : "Irene's Pub",
+          "address" : {
+            "@type" : "PostalAddress",
+            "streetAddress" : "885 Bank Street",
+            "addressLocality" : "Ottawa",
+            "addressRegion" : "Ontario",
+            "addressCountry" : "Canada",
+            "postalCode" : "K1S 3W4"
+          }
+        },
         "eventStatus": "https://schema.org/EventScheduled",
-        "performer": {
-          "@type": "MusicGroup",
-          "name": "The Sunday Night Revue"
-        }
+        "performer": [{
+          "@type": "Person",
+          "name": "Birdie Whyte"
+        },{
+          "@type": "Person",
+          "name": "C.A. Jackson"
+        },{
+          "@type": "Person",
+          "name": "Sonny Aiken"
+        },{
+          "@type": "Person",
+          "name": "Marc Albert"
+        },{
+          "@type": "Person",
+          "name": "Sal"
+        },]
       }`;
 
       const script = document.createElement("script");
