@@ -4,8 +4,60 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sunday Night Revue at Irene's Pub</title>
+    <title>The Sunday Night Revue | Every Sunday at Irene's Pub from 8:30pm</title>
+    <meta name="title" content="The Sunday Night Revue | Every Sunday at Irene's Pub from 8:30pm" />
+    <meta name="description" content="The Sunday Night Revue features local folk musicians Birdie Whyte, Sonny Aiken, C.A. Jackson, Sal Valley, and Marc Albert." />
+    <meta
+      name="keywords"
+      content="Sunday Night Revue, Sunday, Sunday Night Review, Birdie Whyte, Birdy Whyte, Birdie White, Birdy White, Sonny Aiken, C.A. Jackson, CA Jackson, Sal Valley, Marc Albert, Trevor Pool, Tiah Akse, Calum Jackson, Irene's Pub, Irenes Pub, Irenes, Ottawa, Folk, Folk Music, Traditional, Trad, Trad Folk, Local Music, Songwriters, Weekly, Sunday Night, Live Music, Live Music Ottawa, Ottawa Musicians, Ontario, Live Music Ontario, banjo, fiddle, guitar, acoustic guitar, singing, harmony, mandolin, harmonica"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sundaynightrevue.ca/" />
+    <meta property="og:title" content="The Sunday Night Revue | Every Sunday at Irene's Pub from 8:30pm" />
+    <meta property="og:description" content="The Sunday Night Revue features local folk musicians Birdie Whyte, Sonny Aiken, C.A. Jackson, Sal Valley, and Marc Albert." />
+    <meta property="og:image" content="images/banner.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sundaynightrevue.ca/" />
+    <meta property="twitter:title" content="The Sunday Night Revue | Every Sunday at Irene's Pub from 8:30pm" />
+    <meta property="twitter:description" content="The Sunday Night Revue features local folk musicians Birdie Whyte, Sonny Aiken, C.A. Jackson, Sal Valley, and Marc Albert." />
+    <meta property="twitter:image" content="images/banner.png" />
+
     <link rel="stylesheet" href="css/style.css" />
+
+    <script>
+      function nextDate(dayIndex) {
+        var today = new Date();
+        today.setDate(today.getDate() + ((dayIndex - 1 - today.getDay() + 7) % 7) + 1);
+        return today.toISOString().substr(0, 10);
+      }
+
+      const structuredDataText = `{
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "The Sunday Night Revue",
+        "description": "The Sunday Night Revue features local folk musicians Birdie Whyte, Sonny Aiken, C.A. Jackson, Sal Valley, and Marc Albert. The weekly show offers an ever growing catalog of traditional and original songs performed in various ensembles by the musicians—singing in harmony, playing acoustic guitars, banjo, fiddle, mandolin, and harmonica. Join them every Sunday from 8:30 until midnight at Irene’s Pub, 885 Bank Street.",
+        "image": "https://sundaynightrevue.ca/images/banner.png",
+        "startDate": "${nextDate(0)}T20:30",
+        "endDate": "${nextDate(0)}T23:30",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "performer": {
+          "@type": "MusicGroup",
+          "name": "The Sunday Night Revue"
+        }
+      }`;
+
+      const script = document.createElement("script");
+      script.setAttribute("type", "application/ld+json");
+      script.textContent = structuredDataText;
+      document.head.appendChild(script);
+    </script>
   </head>
   <body class="relative flex flex-col items-center h-full">
     <div id="container" class="w-full relative flex flex-col items-center px-10 flex-shrink-0">
