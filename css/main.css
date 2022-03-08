@@ -50,6 +50,11 @@ a {
   @apply underline;
 }
 
+#lamp1:hover,
+#lamp2:hover {
+  animation: swing 2s infinite;
+}
+
 /*!
  * animate.css - https://animate.style/
  * Version - 4.1.1
