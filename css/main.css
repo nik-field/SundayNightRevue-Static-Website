@@ -50,10 +50,10 @@ a {
   @apply underline;
 }
 
-#lamp1:hover,
+/* #lamp1:hover,
 #lamp2:hover {
   animation: swing 2s infinite;
-}
+} */
 
 /*!
  * animate.css - https://animate.style/
@@ -151,20 +151,7 @@ a {
   -webkit-animation-duration: calc(var(--animate-duration) * 3);
   animation-duration: calc(var(--animate-duration) * 3);
 }
-@media print, (prefers-reduced-motion: reduce) {
-  .animate__animated {
-    -webkit-animation-duration: 1ms !important;
-    animation-duration: 1ms !important;
-    -webkit-transition-duration: 1ms !important;
-    transition-duration: 1ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-    animation-iteration-count: 1 !important;
-  }
 
-  .animate__animated[class*="Out"] {
-    opacity: 0;
-  }
-}
 /* Attention seekers  */
 @-webkit-keyframes swing {
   20% {
