@@ -1019,10 +1019,11 @@ a {
   text-decoration: underline;
 }
 
-/* #lamp1:hover,
+#lamp1:hover,
 #lamp2:hover {
-  animation: swing 2s infinite;
-} */
+  -webkit-animation: swing 2s infinite;
+          animation: swing 2s infinite;
+}
 
 /*!
  * animate.css - https://animate.style/
