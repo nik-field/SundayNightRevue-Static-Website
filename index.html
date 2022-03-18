@@ -123,7 +123,7 @@
       <div id="border" class="pointer-events-none z-10"></div>
       <div id="icon-stickers" class="sticky mt-[-100vh] top-0 left-0 p-8 lg:p-12 flex items-center pointer-events-auto">
         <div id="instagram-icon" class="w-8 hover:scale-110 mr-4">
-          <a href="https://instagram.com/sunday.night.revue">
+          <a href="https://instagram.com/sunday.night.revue" title="Instagram">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
               <path
                     d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
@@ -136,14 +136,28 @@
       </div>
     </div>
     <hero class="max-w-3xl flex items-center flex-col mt-24 flex-shrink-0 animate__bounceIn">
-      <div id="wordmark" class="max-w-3xl"><img width="1022" height="auto" src="images/build/colour-wordmark.png" alt="The Sunday Night Revue" /></div>
-      <div id="irenes" class="max-w-xl mx-4 my-8">
-        <a href="https://irenespub.ca"><img width="713" height="auto" class="hover:scale-105 transition-transform" src="images/build/irenes-marker.png" alt="Irene's Pub, 885 Bank Street" /></a>
+      <div id="wordmark" class="max-w-3xl">
+        <h1 class="sr-only">The Sunday Night Revue</h1><img width="1022" height="auto" src="images/build/colour-wordmark.png" alt="The Sunday Night Revue" />
       </div>
-      <div id="details" class="max-w-3xl mb-12"><img width="618" height="auto" src="images/build/details-no-web.png" alt="Every Sunday, 8:30PM, Pay What You Can" /></div>
+      <div id="irenes" class="max-w-xl mx-4 my-8">
+        <a href="https://irenespub.ca">
+          <h2 class="sr-only">Irene's Pub</h2><img width="713" height="auto" class="hover:scale-105 transition-transform" src="images/build/irenes-marker.png" alt="Irene's Pub, 885 Bank Street" />
+        </a>
+      </div>
+      <div id="details" class="max-w-3xl mb-12">
+        <h3 class="sr-only">Every Sunday. 8:30PM. Pay What You Can.</h3><img width="618" height="auto" src="images/build/details-no-web.png" alt="Every Sunday, 8:30PM, Pay What You Can" />
+      </div>
     </hero>
     <main class="overflow-hidden">
       <div id="featuring" class="mb-24 animate__animated animate__fadeInUp">
+        <h2 class="sr-only">Featuring</h2>
+        <ul class="sr-only">
+          <li>Birdie Whyte</li>
+          <li>C.A. Jackson</li>
+          <li>Sonny Aiken</li>
+          <li>Marc Albert</li>
+          <li>Sal</li>
+        </ul>
         <img height="auto" width="829" class="hidden md:block" src="images/build/featuring.png" alt="Featuring Birdie Whyte, C.A. Jackson, Sonny Aiken, Marc Albert, and Sal" />
         <div id="mobile-featuring" class="md:hidden flex flex-wrap justify-center">
           <div class="w-full flex justify-center"><img width="386" height="auto" src="images/build/featuring-header.png" alt="Featuring" /></div>
@@ -222,7 +236,7 @@
         </div>
       </section>
       <section id="contact" class="text-center">
-        <h1 class="text-xl my-4">Contact</h1>
+        <h3 class="text-xl my-4">Contact</h3>
         <p><a href="mailto:info@sundaynightrevue.ca">info@sundaynightrevue.ca</a></p>
         <p><a href="javascript:void(0)" onclick="openNav()">Press Release</a></p>
         <div class="text-green-500 text-sm my-4">
