@@ -28,6 +28,26 @@
   <meta property="twitter:image" content="images/banner.png" />
   <link rel="stylesheet" href="css/style.css" />
   <script>
+    /* Open when someone clicks on the span element */
+    function openNav(e) {
+      document.getElementById("release-overlay").style.top="0";
+      document.getElementById("release-overlay").style.opacity="1";
+      document.getElementById("closeButton").style.top="0";
+      document.getElementById("closeButton").style.opacity="1";
+      document.body.style.overflow="hidden";
+    }
+
+    /* Close when someone clicks on the "x" symbol inside the overlay */
+    function closeNav(e) {
+      if(e.target.id=="release-overlay"||e.target.id=="closeButton") {
+        document.getElementById("release-overlay").style.opacity="0";
+        document.getElementById("release-overlay").style.top="100%";
+        document.getElementById("closeButton").style.opacity="0";
+        document.getElementById("closeButton").style.top="100%";
+        document.body.style.overflow="auto";
+      }
+    }
+
     function nextDate(dayIndex) {
       var today=new Date();
       today.setDate(today.getDate()+((dayIndex-1-today.getDay()+7)%7)+1);
@@ -122,7 +142,7 @@
       </div>
       <div id="details" class="max-w-3xl mb-12"><img width="618" height="auto" src="images/build/details-no-web.png" alt="Every Sunday, 8:30PM, Pay What You Can" /></div>
     </hero>
-    <main>
+    <main class="overflow-hidden">
       <div id="featuring" class="mb-24 animate__animated animate__fadeInUp">
         <img height="auto" width="829" class="hidden md:block" src="images/build/featuring.png" alt="Featuring Birdie Whyte, C.A. Jackson, Sonny Aiken, Marc Albert, and Sal" />
         <div id="mobile-featuring" class="md:hidden flex flex-wrap justify-center">
@@ -146,7 +166,7 @@
       </a>
     </div>
   </div>
-  <footer class="bg-green-800 p-24 pb-0 w-full">
+  <footer class="bg-green-800 md:p-24 p-12 pb-0 w-full">
     <div class="max-w-3xl mx-auto">
       <section id="tipjar" class="z-20 relative h-full flex justify-center flex-wrap">
         <h3 class="text-white text-center text-3xl w-full">LEAVE A TIP!</h3>
@@ -204,6 +224,7 @@
       <section id="contact" class="text-center">
         <h1 class="text-xl my-4">Contact</h1>
         <p><a href="mailto:info@sundaynightrevue.ca">info@sundaynightrevue.ca</a></p>
+        <p><a href="javascript:void(0)" onclick="openNav()">Press Release</a></p>
         <div class="text-green-500 text-sm my-4">
           <p>Artwork by <a href="https://instagram.com/helloitsminnieheart">Minnie Heart</a>.</p>
           <p>Web design by <a href="https://ordinaryartistservices.com">Ordinary Artist Services.</a></p>
@@ -211,6 +232,34 @@
       </section>
     </div>
   </footer>
+  <div id="release-overlay" class="overlay" onclick="closeNav(event)">
+    <div id="overlayContent" class="overlay-content"> <img style="display: block; margin-left: auto; margin-right: auto" src="https://cdn.shopify.com/s/files/1/0024/1369/0993/files/irene_s_Black_logo_360x.jpg?v=1533872014" alt="" width="136" height="136" />
+      <p style="font-style: italic">FOR IMMEDIATE RELEASE</p>
+      <h2>Reviving the folk music tradition in Ottawa: Irene&rsquo;s Pub presents The Sunday Night Revue</h2>
+      <p> Ottawa, ON, February 6th &ndash; The Sunday Night Revue features local folk musicians Birdie Whyte, Sonny Aiken, C.A. Jackson, Sal Valley, and Marc Albert. The weekly show offers an ever growing catalog of traditional and original songs performed in various ensembles by the musicians&mdash;singing in harmony, playing acoustic guitars, banjo, fiddle, mandolin, and harmonica. Join them every Sunday from 8:30 until midnight at Irene&rsquo;s Pub, 885 Bank Street. </p>
+      <p> Birdie Whyte, a longtime Ottawa performer, hosts the show, tells jokes, and gives away amusing prizes. There is no cover charge, however, the audience is encouraged to contribute to the tip jar. </p>
+      <p>The acoustic music tradition is alive and well and The Sunday Night Revue brings it into the limelight.</p>
+      <p>&nbsp;</p>
+      <div><img style="width: 100%; display: block; margin-left: auto; margin-right: auto" src="https://sundaynightrevue.ca/cdn/colour-wordmark_on-white_min.jpg" alt="" /></div>
+      <p>&nbsp;</p>
+      <p style="text-align: center">&ndash;30&ndash;</p>
+      <p>&nbsp;</p>
+      <div> Digital Press Release:&nbsp;<a title="https://sundaynightrevue.ca/press-release.html" href="https://sundaynightrevue.ca/press-release.html">https://sundaynightrevue.ca/press-release.html</a> </div><br />
+      <div> Instagram:&nbsp;<a title="https://instagram.com/sunday.night.revue" href="https://instagram.com/sunday.night.revue">sunday.night.revue</a>&nbsp;|&nbsp;<a title="https://instagram.com/irenespub" href="https://instagram.com/irenespub">irenespub</a> </div>
+      <div> Website:&nbsp;<a title="https://sundaynightrevue.ca" href="https://sundaynightrevue.ca">https://sundaynightrevue.ca</a>&nbsp;|&nbsp;<a title="https://irenespub.ca" href="https://irenespub.ca">https://irenespub.ca</a> </div>
+      <div>Poster:&nbsp;<a title="Poster" href="https://drive.google.com/file/d/16gYZjZjfTATX5pi4TZQAE3KjZ-kYVbtW/view?usp=sharing">Link</a></div>
+      <div> Videos:&nbsp;<a title="Beneath The Willow - Teaser" href="https://drive.google.com/file/d/1QrDWTQ1Tjd_-8bOkSN53x_ynMgOqVSdV/view?usp=sharing">Video 1</a> |&nbsp;<a title="Tomatoes - Teaser" href="https://drive.google.com/file/d/19I1Ja1RMRa6d7hZoEGoTpsJaoTG5r9oR/view?usp=sharing">Video 2</a> |&nbsp;<a title="Shame - Teaser" href="https://drive.google.com/file/d/1kLpq0he6DsF4Hkt4tt8mmoMv3VA94oBo/view?usp=sharing">Video 3</a> </div>
+      <div>Images:&nbsp;<a title="Photos" href="https://drive.google.com/drive/folders/1XzlIUINIn_Ysw8H5XEi_55r7NEz8krEy?usp=sharing">Link</a></div><br />
+      <div>Contact:</div>
+      <div><a title="mailto:info@sundaynightrevue.ca" href="mailto:info@sundaynightrevue.ca">info@sundaynightrevue.ca</a></div><br />
+      <div>
+        <div>Irene&rsquo;s Pub</div>
+        <div>885 Bank Street</div>
+        <div><a title="tel:(613) 230-4474" href="tel:(613) 230-4474">(613) 230-4474</a></div>
+      </div>
+    </div>
+  </div>
+  <a id="closeButton" href="javascript:void(0)" class="closebtn" onclick="closeNav(event)">&times;</a>
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="https://unpkg.com/tippy.js@6"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
