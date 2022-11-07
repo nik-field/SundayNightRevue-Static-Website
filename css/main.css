@@ -170,6 +170,9 @@ a {
   paint-order: stroke fill;
 }
 
+.folder-name {
+  @apply text-2xl
+}
 /*!
  * animate.css - https://animate.style/
  * Version - 4.1.1
