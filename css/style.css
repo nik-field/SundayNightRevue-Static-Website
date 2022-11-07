@@ -812,6 +812,12 @@ video {
           flex-shrink: 0;
 }
 
+.transform {
+  -webkit-transform: var(--tw-transform);
+      -ms-transform: var(--tw-transform);
+          transform: var(--tw-transform);
+}
+
 .list-none {
   list-style-type: none;
 }
@@ -852,9 +858,14 @@ video {
   border-width: 1px;
 }
 
-.bg-green-800 {
+.bg-white {
   --tw-bg-opacity: 1;
-  background-color: rgba(6, 95, 70, var(--tw-bg-opacity));
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
 }
 
 .p-1 {
@@ -882,9 +893,9 @@ video {
   text-align: center;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .text-sm {
@@ -942,6 +953,27 @@ video {
           transition-duration: 150ms;
 }
 
+@font-face {
+  font-family: 'CheeseAndCrackers-Heavy';
+
+  src: url('fonts/CCCheeseAndCrackersHeavy-Reg.eot');
+
+  src: url('fonts/CCCheeseAndCrackersHeavy-Reg.eot?#iefix') format('embedded-opentype'),
+    url('fonts/CCCheeseAndCrackersHeavy-Reg.woff2') format('woff2'),
+    url('fonts/CCCheeseAndCrackersHeavy-Reg.woff') format('woff'),
+    url('fonts/CCCheeseAndCrackersHeavy-Reg.ttf') format('truetype');
+
+  font-weight: 900;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+.cheese-and-crackers {
+  font-family: 'CheeseAndCrackers-Heavy';
+}
+
 html {
   height: 100%;
 }
@@ -978,13 +1010,13 @@ body {
   }
 }
 
-#mobile-featuring > img {
+#mobile-featuring>img {
   margin-bottom: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-#tipjar li > * {
+#tipjar li>* {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   display: -webkit-box;
@@ -1013,7 +1045,7 @@ body {
   text-transform: uppercase;
 }
 
-#tipjar li > *:hover {
+#tipjar li>*:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
   -webkit-transform: var(--tw-transform);
@@ -1021,7 +1053,7 @@ body {
           transform: var(--tw-transform);
 }
 
-#tipjar li > * {
+#tipjar li>* {
   min-height: 56px;
   max-width: 320px;
   width: 100%;
@@ -1126,6 +1158,23 @@ a {
   font-size: 24px;
   font-weight: bold;
   margin: 1.25rem 0;
+}
+
+.cheese-and-crackers>span {
+  position: relative;
+  display: inline-block;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 8px black;
+  paint-order: stroke fill;
+}
+
+#gallery .cheese-and-crackers>span {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  -webkit-text-stroke: 5px white;
+  paint-order: stroke fill;
 }
 
 /*!
@@ -1578,6 +1627,11 @@ a {
 
   .md\:p-12 {
     padding: 3rem;
+  }
+
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
