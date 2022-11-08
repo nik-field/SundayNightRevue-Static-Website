@@ -55,7 +55,7 @@ body {
 }
 
 #tipjar li>* {
-  @apply py-2 uppercase flex justify-center items-center px-8 text-center flex-wrap my-6 border-white border-2 hover: scale-105;
+  @apply py-2 uppercase flex justify-center items-center px-8 text-center flex-wrap my-6 border-white border-2 hover:scale-105;
   min-height: 56px;
   max-width: 320px;
   width: 100%;

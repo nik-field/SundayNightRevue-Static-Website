@@ -7,6 +7,7 @@
     "animate.css": "^4.1.1",
     "autoprefixer": "^10.4.2",
     "cssnano": "^5.1.0",
+    "directory-tree": "^3.3.2",
     "postcss": "^8.4.8",
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.0.2",
@@ -14,8 +15,8 @@
   },
   "browserslist": "last 30 versions",
   "scripts": {
-    "start": "npx tailwindcss -i css/main.css -o css/style.css --watch",
-    "build": "NODE_ENV=production npx tailwindcss -i css/main.css -o css/style.css --minify"
+    "start": "node js/getfilesystem.js && npx tailwindcss -i css/main.css -o css/style.css --watch",
+    "build": "NODE_ENV=production npx tailwindcss -i css/main.css -o css/style.css --minify && node js/getfilesystem.js"
   },
   "author": "Ordinary Artist Services",
   "license": "ISC",
