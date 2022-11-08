@@ -55,7 +55,7 @@ body {
 }
 
 #tipjar li>* {
-  @apply py-2 uppercase flex justify-center items-center px-8 text-center flex-wrap my-6 border-white border-2 hover:scale-105;
+  @apply py-2 uppercase flex justify-center items-center px-8 text-center flex-wrap my-6 border-white border-2 hover: scale-105;
   min-height: 56px;
   max-width: 320px;
   width: 100%;
@@ -151,9 +151,11 @@ a {
   margin: 1.25rem 0;
 }
 
+.cheese-and-crackers span[class^="word"] {
+  @apply mb-4;
+}
 
-
-.cheese-and-crackers>span {
+.cheese-and-crackers span {
   position: relative;
   display: inline-block;
   letter-spacing: 1px;
@@ -161,7 +163,7 @@ a {
   paint-order: stroke fill;
 }
 
-#gallery .cheese-and-crackers>span {
+#gallery .cheese-and-crackers span {
   position: relative;
   display: inline-block;
   text-transform: uppercase;
@@ -170,9 +172,32 @@ a {
   paint-order: stroke fill;
 }
 
-.folder-name {
-  @apply text-2xl
+.folder {
+  @apply grid gap-4 mb-24;
+  grid-template-columns: repeat(auto-fill, minmax(min(30em, calc(50% - .77em)), 1fr));
 }
+
+.folder-name {
+  @apply flex justify-between text-2xl w-full flex-auto mb-12;
+}
+
+.folrder-name button {
+  @apply text-base bg-teal-500;
+}
+
+.image-container {
+  flex-basis: calc(25% - .77rem);
+}
+
+.image-wrapper {
+  aspect-ratio: 6 / 4;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1em;
+}
+
 /*!
  * animate.css - https://animate.style/
  * Version - 4.1.1
