@@ -174,15 +174,18 @@ a {
 
 .folder {
   @apply grid gap-4 mb-24;
-  grid-template-columns: repeat(auto-fill, minmax(min(30em, calc(50% - .77em)), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(8em, calc(33% - .77em)), 1fr));
+}
+.folder.enlarge-folder {
+  grid-template-columns: repeat(auto-fill, minmax(min(30em, 100%), 1fr));
 }
 
 .folder-name {
-  @apply flex justify-between text-2xl w-full flex-auto mb-12;
+  @apply flex md:justify-start justify-between text-2xl w-full flex-auto mb-12;
 }
 
-.folrder-name button {
-  @apply text-base bg-teal-500;
+.folder-name button {
+  @apply text-base text-white md:ml-8 bg-sky-400 rounded-xl px-4 py-2 uppercase;
 }
 
 .image-container {

@@ -17,7 +17,9 @@ getGalleryFS.then((data) => {
         galleryContainer.insertBefore(
           document
             .createRange()
-            .createContextualFragment(`<h4 class='folder-name'>${folder.name.substring(folder.name.indexOf("_") + 1, folder.name.length)}<button onClick='enlargeFolder()'>Enlarge</button></h4>`),
+            .createContextualFragment(
+              `<h4 class='folder-name'>${folder.name.substring(folder.name.indexOf("_") + 1, folder.name.length)}<button onClick='enlargeFolder(event)'>Large Thumbnails</button></h4>`
+            ),
           galleryFolder
         );
 
@@ -34,40 +36,7 @@ getGalleryFS.then((data) => {
     });
 });
 
-// const getGalleryFolders = (async () => {
-//   const response = await fetch("images/gallery");
-//   const data = await response.json();
-//   return data;
-// })();
-// getGalleryFolders.then((data) => {
-//   console.log(data);
-//   data
-//     .slice()
-//     .reverse()
-//     .forEach((folder) => {
-//       if (folder.type === "dir") {
-//         const galleryContainer = document.getElementById("gallery-container");
-//         const galleryFolder = document.createElement("div");
-//         galleryFolder.classList.add("folder", "flex", "flex-wrap");
-//         galleryContainer.appendChild(galleryFolder);
-
-//         galleryFolder.innerHTML = `<h4 class='folder-name w-full flex-1'>${folder.name.substring(folder.name.indexOf("_") + 1, folder.name.length)}</h4>`;
-
-//         const getFolderImages = (async () => {
-//           const response = await fetch(folder.url);
-//           const data = await response.json();
-//           return data;
-//         })();
-//         getFolderImages.then((data) =>
-//           data.forEach((image) => {
-//             if (image.type === "file") {
-//               const imageContainer = document.createElement("div");
-//               imageContainer.classList.add("image-container");
-//               imageContainer.innerHTML = `<div><img width='100%' height='auto' src='${image.path}' /></div>`;
-//               galleryFolder.appendChild(imageContainer);
-//             }
-//           })
-//         );
-//       }
-//     });
-// });
+function enlargeFolder(e) {
+  e.target.textContent = e.target.textContent == "Large Thumbnails" ? "Small Thumbnails" : "Large Thumbnails";
+  e.target.parentNode.nextElementSibling.classList.toggle("enlarge-folder");
+}
