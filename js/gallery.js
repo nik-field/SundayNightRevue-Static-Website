@@ -28,7 +28,9 @@ getGalleryFS.then((data) => {
           if (image.type === "file") {
             const imageContainer = document.createElement("div");
             imageContainer.classList.add("image-container");
-            imageContainer.innerHTML = `<a href="${image.path}" target="_blank"><div class='image-wrapper'><img loading="lazy" width='100%' height='auto' src='${image.path}' /></div></a>`;
+            imageContainer.innerHTML = `<a href="${image.path}" target="_blank"><div class='image-wrapper'><img loading="lazy" width='100%' height='auto' src='${
+              folder.path + "/thumbnails/" + image.name.substring(0, image.name.lastIndexOf(".")) + "_thumb" + image.name.substring(image.name.lastIndexOf("."))
+            }' /></div></a>`;
             galleryFolder.appendChild(imageContainer);
           }
         });

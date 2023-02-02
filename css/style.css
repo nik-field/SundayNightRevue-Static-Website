@@ -641,8 +641,16 @@ video {
   visibility: visible;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .collapse {
   visibility: collapse;
+}
+
+.static {
+  position: static;
 }
 
 .fixed {
@@ -865,13 +873,6 @@ video {
           flex: 1 1 auto;
 }
 
-.flex-1 {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 0%;
-      -ms-flex: 1 1 0%;
-          flex: 1 1 0%;
-}
-
 .flex-shrink-0 {
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
@@ -882,6 +883,20 @@ video {
   -webkit-flex-shrink: 1;
       -ms-flex-negative: 1;
           flex-shrink: 1;
+}
+
+.flex-grow {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.grow {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .border-collapse {
@@ -952,6 +967,11 @@ video {
   overflow: hidden;
 }
 
+.rounded {
+  -webkit-border-radius: 0.25rem;
+          border-radius: 0.25rem;
+}
+
 .rounded-xl {
   -webkit-border-radius: 0.75rem;
           border-radius: 0.75rem;
@@ -983,21 +1003,6 @@ video {
 .bg-sky-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(56 189 248 / var(--tw-bg-opacity));
-}
-
-.bg-cyan-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 211 238 / var(--tw-bg-opacity));
-}
-
-.bg-teal-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(153 246 228 / var(--tw-bg-opacity));
-}
-
-.bg-teal-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(20 184 166 / var(--tw-bg-opacity));
 }
 
 .p-1 {
@@ -1101,6 +1106,10 @@ video {
   text-transform: uppercase;
 }
 
+.lowercase {
+  text-transform: lowercase;
+}
+
 .italic {
   font-style: italic;
 }
@@ -1171,14 +1180,12 @@ video {
 }
 
 @font-face {
-  font-family: 'CheeseAndCrackers-Heavy';
+  font-family: "CheeseAndCrackers-Heavy";
 
-  src: url('fonts/CCCheeseAndCrackersHeavy-Reg.eot');
+  src: url("fonts/CCCheeseAndCrackersHeavy-Reg.eot");
 
-  src: url('fonts/CCCheeseAndCrackersHeavy-Reg.eot?#iefix') format('embedded-opentype'),
-    url('fonts/CCCheeseAndCrackersHeavy-Reg.woff2') format('woff2'),
-    url('fonts/CCCheeseAndCrackersHeavy-Reg.woff') format('woff'),
-    url('fonts/CCCheeseAndCrackersHeavy-Reg.ttf') format('truetype');
+  src: url("fonts/CCCheeseAndCrackersHeavy-Reg.eot?#iefix") format("embedded-opentype"), url("fonts/CCCheeseAndCrackersHeavy-Reg.woff2") format("woff2"),
+    url("fonts/CCCheeseAndCrackersHeavy-Reg.woff") format("woff"), url("fonts/CCCheeseAndCrackersHeavy-Reg.ttf") format("truetype");
 
   font-weight: 900;
 
@@ -1188,7 +1195,7 @@ video {
 }
 
 .cheese-and-crackers {
-  font-family: 'CheeseAndCrackers-Heavy';
+  font-family: "CheeseAndCrackers-Heavy";
 }
 
 html {
@@ -1227,13 +1234,13 @@ body {
   }
 }
 
-#mobile-featuring>img {
+#mobile-featuring > img {
   margin-bottom: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-#tipjar li>* {
+#tipjar li > * {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   display: -webkit-box;
@@ -1262,7 +1269,7 @@ body {
   text-transform: uppercase;
 }
 
-#tipjar li>*:hover {
+#tipjar li > *:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1270,7 +1277,7 @@ body {
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-#tipjar li>* {
+#tipjar li > * {
   min-height: 56px;
   max-width: 320px;
   width: 100%;
@@ -1403,8 +1410,8 @@ a {
   margin-bottom: 6rem;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(min(8em, -webkit-calc(33% - .77em)), 1fr));
-  grid-template-columns: repeat(auto-fill, minmax(min(8em, calc(33% - .77em)), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(8em, -webkit-calc(33% - 0.77em)), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(8em, calc(33% - 0.77em)), 1fr));
 }
 
 .folder.enlarge-folder {
@@ -1462,9 +1469,9 @@ a {
 }
 
 .image-container {
-  -webkit-flex-basis: -webkit-calc(25% - .77rem);
-      -ms-flex-preferred-size: calc(25% - .77rem);
-          flex-basis: calc(25% - .77rem);
+  -webkit-flex-basis: -webkit-calc(25% - 0.77rem);
+      -ms-flex-preferred-size: calc(25% - 0.77rem);
+          flex-basis: calc(25% - 0.77rem);
 }
 
 .image-wrapper {

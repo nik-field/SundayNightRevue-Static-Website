@@ -3,19 +3,17 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'CheeseAndCrackers-Heavy';
-  src: url('fonts/CCCheeseAndCrackersHeavy-Reg.eot');
-  src: url('fonts/CCCheeseAndCrackersHeavy-Reg.eot?#iefix') format('embedded-opentype'),
-    url('fonts/CCCheeseAndCrackersHeavy-Reg.woff2') format('woff2'),
-    url('fonts/CCCheeseAndCrackersHeavy-Reg.woff') format('woff'),
-    url('fonts/CCCheeseAndCrackersHeavy-Reg.ttf') format('truetype');
+  font-family: "CheeseAndCrackers-Heavy";
+  src: url("fonts/CCCheeseAndCrackersHeavy-Reg.eot");
+  src: url("fonts/CCCheeseAndCrackersHeavy-Reg.eot?#iefix") format("embedded-opentype"), url("fonts/CCCheeseAndCrackersHeavy-Reg.woff2") format("woff2"),
+    url("fonts/CCCheeseAndCrackersHeavy-Reg.woff") format("woff"), url("fonts/CCCheeseAndCrackersHeavy-Reg.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 .cheese-and-crackers {
-  font-family: 'CheeseAndCrackers-Heavy';
+  font-family: "CheeseAndCrackers-Heavy";
 }
 
 html {
@@ -50,11 +48,11 @@ body {
   }
 }
 
-#mobile-featuring>img {
+#mobile-featuring > img {
   @apply mb-8 px-8;
 }
 
-#tipjar li>* {
+#tipjar li > * {
   @apply py-2 uppercase flex justify-center items-center px-8 text-center flex-wrap my-6 border-white border-2 hover:scale-105;
   min-height: 56px;
   max-width: 320px;
@@ -174,8 +172,9 @@ a {
 
 .folder {
   @apply grid gap-4 mb-24;
-  grid-template-columns: repeat(auto-fill, minmax(min(8em, calc(33% - .77em)), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(8em, calc(33% - 0.77em)), 1fr));
 }
+
 .folder.enlarge-folder {
   grid-template-columns: repeat(auto-fill, minmax(min(30em, 100%), 1fr));
 }
@@ -189,7 +188,7 @@ a {
 }
 
 .image-container {
-  flex-basis: calc(25% - .77rem);
+  flex-basis: calc(25% - 0.77rem);
 }
 
 .image-wrapper {
@@ -375,7 +374,6 @@ a {
 }
 
 @-webkit-keyframes bounceIn {
-
   from,
   20%,
   40%,
@@ -421,7 +419,6 @@ a {
 }
 
 @keyframes bounceIn {
-
   from,
   20%,
   40%,
@@ -476,7 +473,6 @@ a {
 }
 
 @-webkit-keyframes bounceInDown {
-
   from,
   60%,
   75%,
@@ -515,7 +511,6 @@ a {
 }
 
 @keyframes bounceInDown {
-
   from,
   60%,
   75%,
