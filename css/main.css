@@ -1,20 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@font-face {
-  font-family: "CheeseAndCrackers-Heavy";
-  src: url("fonts/CCCheeseAndCrackersHeavy-Reg.eot");
-  src: url("fonts/CCCheeseAndCrackersHeavy-Reg.eot?#iefix") format("embedded-opentype"), url("fonts/CCCheeseAndCrackersHeavy-Reg.woff2") format("woff2"),
-    url("fonts/CCCheeseAndCrackersHeavy-Reg.woff") format("woff"), url("fonts/CCCheeseAndCrackersHeavy-Reg.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-.cheese-and-crackers {
-  font-family: "CheeseAndCrackers-Heavy";
-}
+@import "tailwind.css";
+@import "fonts/fonts.css";
+@import "overlay.css";
+@import "animations.css";
 
 html {
   height: 100%;
@@ -27,6 +14,13 @@ body {
   background-size: cover, 10%;
   background-blend-mode: multiply;
   height: 100%;
+  font-family: "Shadows Into Light", cursive;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+button {
+  letter-spacing: 0.1em;
 }
 
 #border {
@@ -62,7 +56,8 @@ body {
 }
 
 a {
-  @apply underline;
+  @apply underline decoration-wavy underline-offset-4 decoration-1;
+  text-decoration-skip-ink: none;
 }
 
 #lamp1:hover,
@@ -70,83 +65,44 @@ a {
   animation: swing 2s infinite;
 }
 
-/* The Overlay (background) */
-.overlay {
-  /* Height & width depends on how you want to reveal the overlay (see JS below) */
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  position: fixed;
-  /* Stay in place */
-  z-index: 20;
-  /* Sit on top */
-  left: 0;
-  top: 100%;
-  overflow-y: scroll;
-  transition: opacity 0.2s;
-  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-  color: black;
+main {
+  font-family: "Shadows Into Light", cursive;
 }
 
-/* Position the content inside the overlay */
-.overlay-content {
-  position: relative;
-  width: 100%;
-  /* 100% width */
-  z-index: 50;
-  background-color: white;
-  padding: 2em 2em 5em;
-  margin: 0 auto;
-  max-width: 720px;
+main p {
+  @apply mt-5 text-center sm:text-left;
 }
 
-/* Position the close button (top right corner) */
-.closebtn {
-  position: fixed;
-  color: black;
-  font-size: 60px;
-  top: 100%;
-  right: 0;
-  opacity: 0;
-  transition: opacity 0.2s;
-  z-index: 30;
-  text-decoration: none;
-  padding: 1.25rem;
-  line-height: 0.5;
+p:first-child,
+p:only-of-type {
+  margin: 0;
 }
 
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 450px) {
-  .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
+.member {
+  @apply w-full grid gap-y-4 gap-8 mb-8 sm:grid-cols-[auto,1fr] justify-items-center items-center sm:justify-items-start uppercase tracking-widest max-w-screen-md;
+}
+.member:nth-of-type(even) {
+  @apply sm:justify-items-end;
+  direction: rtl;
 }
 
-.overlay {
-  font-family: "Montserrat", sans-serif;
-  background-color: rgba(253, 245, 230, 0.95);
-  line-height: 1.5;
+.member img {
+  @apply row-span-1 sm:row-span-2 order-1;
+  /* grid-row: 1 / 3; */
 }
 
-.overlay p {
-  margin: 16px 0;
+.member p {
+  @apply order-3 sm:order-2 sm:self-end sm:col-start-2;
+}
+.member-socials {
+  @apply flex gap-4 flex-wrap justify-center sm:justify-start order-2 sm:order-3 sm:col-start-2 sm:self-start;
+}
+.member-socials a {
+  @apply text-teal-700 hover:decoration-red-700 hover:scale-110;
 }
 
-.overlay a {
-  word-break: break-word;
-  color: #e8182d;
-}
-
-.overlay a:visited {
-  color: #a83800;
-}
-
-.overlay h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 1.25rem 0;
+.cheese-and-crackers {
+  font-family: "CheeseAndCrackers-Heavy";
 }
 
 .cheese-and-crackers span[class^="word"] {
@@ -157,8 +113,6 @@ a {
   position: relative;
   display: inline-block;
   letter-spacing: 1px;
-  -webkit-text-stroke: 8px black;
-  paint-order: stroke fill;
 }
 
 #gallery .cheese-and-crackers span {
@@ -166,9 +120,18 @@ a {
   display: inline-block;
   text-transform: uppercase;
   letter-spacing: 0px;
-  -webkit-text-stroke: 5px white;
-  paint-order: stroke fill;
 }
+
+/* @supports (-webkit-font-smoothing: antialiased) {
+  #gallery .cheese-and-crackers span {
+    -webkit-text-stroke: 5px white;
+    paint-order: stroke fill;
+  }
+  .cheese-and-crackers span {
+    -webkit-text-stroke: 8px black;
+    paint-order: stroke fill;
+  }
+} */
 
 .folder {
   @apply grid gap-4 mb-24;
@@ -198,390 +161,4 @@ a {
   justify-content: center;
   align-items: center;
   border-radius: 1em;
-}
-
-/*!
- * animate.css - https://animate.style/
- * Version - 4.1.1
- * Licensed under the Hippocratic License 2.1 - http://firstdonoharm.dev
- *
- * Copyright (c) 2022 Animate.css
- */
-:root {
-  --animate-duration: 1s;
-  --animate-delay: 0.1s;
-  --animate-repeat: 1;
-}
-
-.animate__animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-duration: var(--animate-duration);
-  animation-duration: var(--animate-duration);
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.animate__animated.animate__infinite {
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-.animate__animated.animate__repeat-1 {
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-  -webkit-animation-iteration-count: var(--animate-repeat);
-  animation-iteration-count: var(--animate-repeat);
-}
-
-.animate__animated.animate__repeat-2 {
-  -webkit-animation-iteration-count: calc(1 * 2);
-  animation-iteration-count: calc(1 * 2);
-  -webkit-animation-iteration-count: calc(var(--animate-repeat) * 2);
-  animation-iteration-count: calc(var(--animate-repeat) * 2);
-}
-
-.animate__animated.animate__repeat-3 {
-  -webkit-animation-iteration-count: calc(1 * 3);
-  animation-iteration-count: calc(1 * 3);
-  -webkit-animation-iteration-count: calc(var(--animate-repeat) * 3);
-  animation-iteration-count: calc(var(--animate-repeat) * 3);
-}
-
-.animate__animated.animate__delay-1s {
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
-  -webkit-animation-delay: var(--animate-delay);
-  animation-delay: var(--animate-delay);
-}
-
-.animate__animated.animate__delay-2s {
-  -webkit-animation-delay: calc(1s * 2);
-  animation-delay: calc(1s * 2);
-  -webkit-animation-delay: calc(var(--animate-delay) * 2);
-  animation-delay: calc(var(--animate-delay) * 2);
-}
-
-.animate__animated.animate__delay-3s {
-  -webkit-animation-delay: calc(1s * 3);
-  animation-delay: calc(1s * 3);
-  -webkit-animation-delay: calc(var(--animate-delay) * 3);
-  animation-delay: calc(var(--animate-delay) * 3);
-}
-
-.animate__animated.animate__delay-4s {
-  -webkit-animation-delay: calc(1s * 4);
-  animation-delay: calc(1s * 4);
-  -webkit-animation-delay: calc(var(--animate-delay) * 4);
-  animation-delay: calc(var(--animate-delay) * 4);
-}
-
-.animate__animated.animate__delay-5s {
-  -webkit-animation-delay: calc(1s * 5);
-  animation-delay: calc(1s * 5);
-  -webkit-animation-delay: calc(var(--animate-delay) * 5);
-  animation-delay: calc(var(--animate-delay) * 5);
-}
-
-.animate__animated.animate__faster {
-  -webkit-animation-duration: calc(1s / 2);
-  animation-duration: calc(1s / 2);
-  -webkit-animation-duration: calc(var(--animate-duration) / 2);
-  animation-duration: calc(var(--animate-duration) / 2);
-}
-
-.animate__animated.animate__fast {
-  -webkit-animation-duration: calc(1s * 0.8);
-  animation-duration: calc(1s * 0.8);
-  -webkit-animation-duration: calc(var(--animate-duration) * 0.8);
-  animation-duration: calc(var(--animate-duration) * 0.8);
-}
-
-.animate__animated.animate__slow {
-  -webkit-animation-duration: calc(1s * 2);
-  animation-duration: calc(1s * 2);
-  -webkit-animation-duration: calc(var(--animate-duration) * 2);
-  animation-duration: calc(var(--animate-duration) * 2);
-}
-
-.animate__animated.animate__slower {
-  -webkit-animation-duration: calc(1s * 3);
-  animation-duration: calc(1s * 3);
-  -webkit-animation-duration: calc(var(--animate-duration) * 3);
-  animation-duration: calc(var(--animate-duration) * 3);
-}
-
-/* Attention seekers  */
-@-webkit-keyframes swing {
-  20% {
-    -webkit-transform: rotate3d(0, 0, 1, 15deg);
-    transform: rotate3d(0, 0, 1, 15deg);
-  }
-
-  40% {
-    -webkit-transform: rotate3d(0, 0, 1, -10deg);
-    transform: rotate3d(0, 0, 1, -10deg);
-  }
-
-  60% {
-    -webkit-transform: rotate3d(0, 0, 1, 5deg);
-    transform: rotate3d(0, 0, 1, 5deg);
-  }
-
-  80% {
-    -webkit-transform: rotate3d(0, 0, 1, -5deg);
-    transform: rotate3d(0, 0, 1, -5deg);
-  }
-
-  to {
-    -webkit-transform: rotate3d(0, 0, 1, 0deg);
-    transform: rotate3d(0, 0, 1, 0deg);
-  }
-}
-
-@keyframes swing {
-  20% {
-    -webkit-transform: rotate3d(0, 0, 1, 15deg);
-    transform: rotate3d(0, 0, 1, 15deg);
-  }
-
-  40% {
-    -webkit-transform: rotate3d(0, 0, 1, -10deg);
-    transform: rotate3d(0, 0, 1, -10deg);
-  }
-
-  60% {
-    -webkit-transform: rotate3d(0, 0, 1, 5deg);
-    transform: rotate3d(0, 0, 1, 5deg);
-  }
-
-  80% {
-    -webkit-transform: rotate3d(0, 0, 1, -5deg);
-    transform: rotate3d(0, 0, 1, -5deg);
-  }
-
-  to {
-    -webkit-transform: rotate3d(0, 0, 1, 0deg);
-    transform: rotate3d(0, 0, 1, 0deg);
-  }
-}
-
-.animate__swing {
-  -webkit-transform-origin: top center;
-  transform-origin: top center;
-  -webkit-animation-name: swing;
-  animation-name: swing;
-}
-
-@-webkit-keyframes bounceIn {
-  from,
-  20%,
-  40%,
-  60%,
-  80%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-    transform: scale3d(0.3, 0.3, 0.3);
-  }
-
-  20% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-    transform: scale3d(1.1, 1.1, 1.1);
-  }
-
-  40% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9);
-    transform: scale3d(0.9, 0.9, 0.9);
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: scale3d(1.03, 1.03, 1.03);
-    transform: scale3d(1.03, 1.03, 1.03);
-  }
-
-  80% {
-    -webkit-transform: scale3d(0.97, 0.97, 0.97);
-    transform: scale3d(0.97, 0.97, 0.97);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-@keyframes bounceIn {
-  from,
-  20%,
-  40%,
-  60%,
-  80%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-    transform: scale3d(0.3, 0.3, 0.3);
-  }
-
-  20% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-    transform: scale3d(1.1, 1.1, 1.1);
-  }
-
-  40% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9);
-    transform: scale3d(0.9, 0.9, 0.9);
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: scale3d(1.03, 1.03, 1.03);
-    transform: scale3d(1.03, 1.03, 1.03);
-  }
-
-  80% {
-    -webkit-transform: scale3d(0.97, 0.97, 0.97);
-    transform: scale3d(0.97, 0.97, 0.97);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-.animate__bounceIn {
-  -webkit-animation-duration: calc(1s * 0.75);
-  animation-duration: calc(1s * 0.75);
-  -webkit-animation-duration: calc(var(--animate-duration) * 0.75);
-  animation-duration: calc(var(--animate-duration) * 0.75);
-  -webkit-animation-name: bounceIn;
-  animation-name: bounceIn;
-}
-
-@-webkit-keyframes bounceInDown {
-  from,
-  60%,
-  75%,
-  90%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -3000px, 0) scaleY(3);
-    transform: translate3d(0, -3000px, 0) scaleY(3);
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 25px, 0) scaleY(0.9);
-    transform: translate3d(0, 25px, 0) scaleY(0.9);
-  }
-
-  75% {
-    -webkit-transform: translate3d(0, -10px, 0) scaleY(0.95);
-    transform: translate3d(0, -10px, 0) scaleY(0.95);
-  }
-
-  90% {
-    -webkit-transform: translate3d(0, 5px, 0) scaleY(0.985);
-    transform: translate3d(0, 5px, 0) scaleY(0.985);
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes bounceInDown {
-  from,
-  60%,
-  75%,
-  90%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -3000px, 0) scaleY(3);
-    transform: translate3d(0, -3000px, 0) scaleY(3);
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 25px, 0) scaleY(0.9);
-    transform: translate3d(0, 25px, 0) scaleY(0.9);
-  }
-
-  75% {
-    -webkit-transform: translate3d(0, -10px, 0) scaleY(0.95);
-    transform: translate3d(0, -10px, 0) scaleY(0.95);
-  }
-
-  90% {
-    -webkit-transform: translate3d(0, 5px, 0) scaleY(0.985);
-    transform: translate3d(0, 5px, 0) scaleY(0.985);
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.animate__bounceInDown {
-  -webkit-animation-name: bounceInDown;
-  animation-name: bounceInDown;
-}
-
-@-webkit-keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.animate__fadeInUp {
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp;
 }
