@@ -1,0 +1,78 @@
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  position: fixed;
+  /* Stay in place */
+  z-index: 20;
+  /* Sit on top */
+  left: 0;
+  top: 100%;
+  overflow-y: scroll;
+  transition: opacity 0.2s;
+  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  color: black;
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  width: 100%;
+  /* 100% width */
+  z-index: 50;
+  background-color: white;
+  padding: 2em 2em 5em;
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+/* Position the close button (top right corner) */
+.closebtn {
+  position: fixed;
+  color: black;
+  font-size: 60px;
+  top: 100%;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 30;
+  text-decoration: none;
+  padding: 1.25rem;
+  line-height: 0.5;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+.overlay {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgba(253, 245, 230, 0.95);
+  line-height: 1.5;
+}
+
+.overlay p {
+  margin: 16px 0;
+}
+
+.overlay a {
+  word-break: break-word;
+  color: #e8182d;
+}
+
+.overlay a:visited {
+  color: #a83800;
+}
+
+.overlay h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 1.25rem 0;
+}
