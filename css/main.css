@@ -14,6 +14,10 @@ body {
   background-size: cover, 10%;
   background-blend-mode: multiply;
   height: 100%;
+}
+
+body > .container,
+body > section {
   font-family: "Shadows Into Light", cursive;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -42,14 +46,9 @@ button {
   }
 }
 
-#mobile-featuring > img {
-  @apply mb-8 px-8;
-}
-
 #tipjar li > * {
-  @apply py-2 uppercase flex justify-center items-center px-8 text-center flex-wrap my-6 border-white border-2 hover:scale-105;
+  @apply py-2 uppercase max-w-xs sm:max-w-sm sm:text-xl flex justify-center items-center px-8 text-center flex-wrap my-6 border-white border-2 hover:scale-105;
   min-height: 56px;
-  max-width: 320px;
   width: 100%;
   border-radius: 22px;
   box-shadow: 6px 6px 11px #242424;
@@ -70,7 +69,7 @@ main {
 }
 
 main p {
-  @apply mt-5 text-center sm:text-left;
+  @apply mt-5 sm:mt-8 text-center sm:text-left sm:text-xl;
 }
 
 p:first-child,
@@ -79,7 +78,7 @@ p:only-of-type {
 }
 
 .member {
-  @apply w-full grid gap-y-4 gap-8 mb-8 sm:grid-cols-[auto,1fr] justify-items-center items-center sm:justify-items-start uppercase tracking-widest max-w-screen-md;
+  @apply w-full grid gap-y-4 gap-8 mb-8 sm:gap-y-6 sm:gap-10 sm:mb-12 sm:grid-cols-[auto,1fr] justify-items-center items-center sm:justify-items-start uppercase tracking-widest max-w-screen-md;
 }
 .member:nth-of-type(even) {
   @apply sm:justify-items-end;
@@ -93,6 +92,7 @@ p:only-of-type {
 
 .member p {
   @apply order-3 sm:order-2 sm:self-end sm:col-start-2;
+  direction: ltr;
 }
 .member-socials {
   @apply flex gap-4 flex-wrap justify-center sm:justify-start order-2 sm:order-3 sm:col-start-2 sm:self-start;
