@@ -10,7 +10,7 @@ html {
 body {
   color: white;
   position: relative;
-  background: fixed url("../images/build/watercolour-wash.jpg"), repeat url("../images/build/seamless-watercolour-paper.jpg");
+  background: fixed url("../images/build/watercolour-wash.webp"), repeat url("../images/build/seamless-watercolour-paper.webp");
   background-size: cover, 10%;
   background-blend-mode: multiply;
   height: 100%;
